@@ -1,0 +1,6 @@
+# The site is published from the project root, so block .env from being served as a page.
+[[redirects]]
+  from = "/.env"
+  to = "/404"
+  status = 404
+  force = true

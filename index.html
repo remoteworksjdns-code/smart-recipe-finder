@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Recipe Finder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="wrap">
+    <header class="top">
+      <h1>Smart Recipe Finder</h1>
+      <p>Search by what's in your kitchen or how much time you have.</p>
+    </header>
+
+    <section class="controls">
+      <div class="search">
+        <label for="search">Search by ingredient</label>
+        <input id="search" type="search" placeholder="e.g. garlic, rice" autocomplete="off">
+        <small>Separate ingredients with commas. Recipes must include every one.</small>
+      </div>
+
+      <form id="web-search" class="search">
+        <label for="web-term">Find new recipes online</label>
+        <input id="web-term" type="search" placeholder="e.g. lentil soup" autocomplete="off">
+        <div class="form-actions">
+          <button id="web-submit" class="save" type="submit">Search online</button>
+          <button id="web-clear" class="chip" type="button" hidden>Back to my recipes</button>
+          <small id="web-status" aria-live="polite"></small>
+        </div>
+      </form>
+
+      <form id="suggest-form" class="search">
+        <label for="suggest-ingredients">Suggest something for me</label>
+        <input id="suggest-ingredients" type="text" placeholder="e.g. rice, egg, spinach" autocomplete="off">
+        <small>List what you have on hand, separated by commas.</small>
+        <div class="form-actions">
+          <button id="suggest-submit" class="save" type="submit">Suggest a recipe</button>
+          <small id="suggest-status" aria-live="polite"></small>
+        </div>
+        <div id="suggest-result" aria-live="polite"></div>
+      </form>
+
+      <div class="filter" role="group" aria-label="Maximum cook time">
+        <span class="label">Cook time</span>
+        <button class="chip" type="button" data-max="0" aria-pressed="true">Any</button>
+        <button class="chip" type="button" data-max="15" aria-pressed="false">15 min or less</button>
+        <button class="chip" type="button" data-max="30" aria-pressed="false">30 min or less</button>
+        <button class="chip" type="button" data-max="60" aria-pressed="false">60 min or less</button>
+      </div>
+    </section>
+
+    <details id="add-recipe" class="add">
+      <summary>Add a recipe</summary>
+      <form id="recipe-form" novalidate>
+        <div class="field">
+          <label for="recipe-name">Name</label>
+          <input id="recipe-name" type="text" autocomplete="off" aria-describedby="error-name">
+          <small id="error-name" class="field-error"></small>
+        </div>
+        <div class="field">
+          <label for="recipe-ingredients">Ingredients (one per line)</label>
+          <textarea id="recipe-ingredients" rows="5" placeholder="2 cloves garlic" aria-describedby="error-ingredients"></textarea>
+          <small id="error-ingredients" class="field-error"></small>
+        </div>
+        <div class="field">
+          <label for="recipe-cook-time">Cook time (minutes)</label>
+          <input id="recipe-cook-time" type="number" min="1" max="1440" step="1" aria-describedby="error-cook_time">
+          <small id="error-cook_time" class="field-error"></small>
+        </div>
+        <div class="form-actions">
+          <button id="recipe-save" class="save" type="submit">Save recipe</button>
+          <small id="form-status" aria-live="polite"></small>
+        </div>
+      </form>
+    </details>
+
+    <p id="status" class="status" aria-live="polite">Loading recipes…</p>
+    <section id="recipes" class="grid"></section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="db.js"></script>
+  <script src="validation.js"></script>
+  <script src="recipe.js"></script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+# Local environment files (API keys and credentials)
+.env
+.env.*
+!.env.example
+
+# Netlify local dev files
+.netlify
+
+# npm packages
+node_modules

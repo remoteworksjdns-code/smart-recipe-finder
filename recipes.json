@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Garlic Butter Shrimp Pasta",
+    "ingredients": [
+      "200 g spaghetti",
+      "250 g peeled shrimp",
+      "4 cloves garlic",
+      "3 tbsp butter",
+      "1 lemon",
+      "Handful of parsley"
+    ],
+    "cook_time": 20
+  },
+  {
+    "id": 2,
+    "name": "Chicken Fried Rice",
+    "ingredients": [
+      "3 cups cooked rice",
+      "2 chicken thighs",
+      "2 eggs",
+      "1 cup frozen peas",
+      "3 spring onions",
+      "2 tbsp soy sauce"
+    ],
+    "cook_time": 25
+  },
+  {
+    "id": 3,
+    "name": "Chickpea and Sweet Potato Curry",
+    "ingredients": [
+      "2 cans chickpeas",
+      "1 sweet potato",
+      "1 onion",
+      "3 cloves garlic",
+      "2 tbsp curry powder",
+      "400 ml coconut milk"
+    ],
+    "cook_time": 40
+  },
+  {
+    "id": 4,
+    "name": "Banana Pancakes",
+    "ingredients": [
+      "2 ripe bananas",
+      "2 eggs",
+      "1/2 cup flour",
+      "1 tsp baking powder",
+      "1/4 cup milk"
+    ],
+    "cook_time": 15
+  },
+  {
+    "id": 5,
+    "name": "Margherita Pizza",
+    "ingredients": [
+      "Pizza dough",
+      "200 g tomato passata",
+      "125 g mozzarella",
+      "Fresh basil",
+      "2 tbsp olive oil"
+    ],
+    "cook_time": 90
+  }
+]
